@@ -1,2 +1,6 @@
 [
+   { "keys": ["ctrl+d"], "command": "duplicate_line" },
+   { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+
+   { "keys": ["f3"], "command": "find_under" }
 ]
