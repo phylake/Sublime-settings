@@ -1,4 +1,4 @@
 {
-	"font_size": 13.0,
-	"rulers": [80, 120]
+	"rulers": [80, 120],
+	"translate_tabs_to_spaces": true
 }
