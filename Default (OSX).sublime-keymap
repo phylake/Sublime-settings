@@ -24,6 +24,9 @@
    { "keys": ["ctrl+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
    { "keys": ["ctrl+shift+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
 
+   { "keys": ["ctrl+super+up"], "command": "select_lines", "args": {"forward": false} },
+   { "keys": ["ctrl+super+down"], "command": "select_lines", "args": {"forward": true} },
+
    { "keys": ["ctrl+d"], "command": "duplicate_line" },
    { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
 
