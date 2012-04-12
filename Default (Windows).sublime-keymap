@@ -5,8 +5,6 @@
    { "keys": ["ctrl+alt+w"], "command": "find_under_expand" },
    { "keys": ["ctrl+shift+alt+w"], "command": "find_all_under" },
    
-   // apparently no difference between these
-   // { "keys": ["f3"], "command": "find_under" }
-   { "keys": ["f3"], "command": "find_next" }
+   { "keys": ["f3"], "command": "find_under" }
 
 ]
