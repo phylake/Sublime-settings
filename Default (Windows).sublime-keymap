@@ -2,6 +2,11 @@
    { "keys": ["ctrl+d"], "command": "duplicate_line" },
    { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
 
-   { "keys": ["f3"], "command": "find_under" },
-   { "keys": ["ctrl+alt+w"], "command": "expand_selection", "args": {"to": "word"} }
+   { "keys": ["ctrl+alt+w"], "command": "find_under_expand" },
+   { "keys": ["ctrl+shift+alt+w"], "command": "find_all_under" },
+   
+   // apparently no difference between these
+   // { "keys": ["f3"], "command": "find_under" }
+   { "keys": ["f3"], "command": "find_next" }
+
 ]
