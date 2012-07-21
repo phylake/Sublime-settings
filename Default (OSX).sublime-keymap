@@ -33,6 +33,9 @@
 
    { "keys": ["f3"], "command": "find_under" },
 
+   { "keys": ["f9"], "command": "sort_lines", "args": {"case_sensitive": false} },
+   { "keys": ["ctrl+f9"], "command": "sort_lines", "args": {"case_sensitive": true} },
+
    {
       "keys": ["super+shift+1"],
       "command": "set_layout",
