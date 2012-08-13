@@ -1,4 +1,5 @@
 {
+	"theme": "Soda Dark.sublime-theme",
 	"font_size":10.0,
 	"rulers": [80, 120],
 	"translate_tabs_to_spaces": true,
