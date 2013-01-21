@@ -1,5 +1,5 @@
 {
-    "extensions": ["as", "hx", "mxml"],
+    "extensions": ["as", "hx", "mxml", "es"],
     "translate_tabs_to_spaces": false,
     "tab_size": 3
 }
