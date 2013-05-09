@@ -38,6 +38,7 @@
 
    { "keys": ["f9"], "command": "sort_lines", "args": {"case_sensitive": false} },
    { "keys": ["ctrl+f9"], "command": "sort_lines", "args": {"case_sensitive": true} },
+   { "keys": ["f10"], "command": "permute_lines", "args": {"operation": "unique"} },
 
    {
       "keys": ["super+shift+1"],
