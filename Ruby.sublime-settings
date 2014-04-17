@@ -8,6 +8,7 @@
     "extensions":
     [
         "rb",
+        "cap",
         "rcss"
     ]
 }

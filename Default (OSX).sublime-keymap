@@ -1,4 +1,6 @@
 [
+   { "keys": ["super+shift+w"], "command": "reopen_last_file" },
+
    { "keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
    { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
    { "keys": ["ctrl+super+p"], "command": "prompt_select_project" },
