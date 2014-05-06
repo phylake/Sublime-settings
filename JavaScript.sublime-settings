@@ -1,7 +1,7 @@
 {
-    "tab_size": 3,
-    "extensions":
-	[
-		"jsfl"
-	]
+  "tab_size": 2,
+  "extensions":
+  [
+    "jsfl"
+  ]
 }
