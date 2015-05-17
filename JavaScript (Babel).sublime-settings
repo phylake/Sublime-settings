@@ -1,7 +1,8 @@
 {
-	"extensions":
-	[
-		"js"
-	],
-	"color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme"
+  "extensions": [
+    "js"
+  ],
+  "color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true
 }
