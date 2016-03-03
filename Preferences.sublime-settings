@@ -1,6 +1,7 @@
 {
   "default_line_ending": "unix",
   "ensure_newline_at_eof_on_save": true,
+  "trim_trailing_white_space_on_save": true,
   "font_size": 14.0,
   "scroll_speed": 1.3,
   "word_wrap": "false",
