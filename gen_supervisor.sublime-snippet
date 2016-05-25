@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+-behaviour(supervisor).
+
+%% API
+-export([start_link/0, start_child/0]).
+
+%% Supervisor callbacks
+-export([init/1]).
+
+start_link() ->
+  io:format("$1:start_link()~n",[]),
+  supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+
+start_child() ->
+  supervisor:start_child(?MODULE, []).
+
+init([]) ->
+  io:format("$1:init(), PID [~p]~n", [self()]),
+  Server = {$2_id, {$2, start_link, []},
+              permanent, 2000, worker, [$2]},
+  Children = [Server],
+  RestartStrategy = {simple_one_for_one, 0, 1},
+  {ok, {RestartStrategy, Children}}.
+
+]]>
+</content>
+    <tabTrigger>gen_supervisor</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>gen_supervisor stub</description>
+</snippet>
