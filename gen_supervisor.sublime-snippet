@@ -9,6 +9,7 @@
 -export([
   start_link/0
 , start_child/0
+, which_children/0
 ]).
 
 %% ====================================================================
@@ -22,15 +23,22 @@ start_link() ->
 start_child() ->
   supervisor:start_child(?MODULE, []).
 
+which_children() ->
+  supervisor:which_children(?MODULE).
+
 %% ====================================================================
 %% supervisor
 %% ====================================================================
 
 init([]) ->
   lager:info("$1:init(), PID [~p]~n", [self()]),
-  Server = {$2_id, {$2, start_link, []},
-              permanent, 2000, worker, [$2]},
-  Children = [Server],
+  Children = [
+    #{id => $2_id
+    , start => {$2, start_link, []}
+    , restart => temporary
+    , type => worker
+    }
+  ],
   RestartStrategy = {simple_one_for_one, 0, 1},
   {ok, {RestartStrategy, Children}}.
 
