@@ -1,0 +1,53 @@
+<snippet>
+    <content><![CDATA[
+-behaviour(supervisor).
+
+%% Supervisor callbacks
+-export([init/1]).
+
+%% API
+-export([
+  start_link/0
+, start_child/0
+, terminate_child/1
+, which_children/0
+]).
+
+%% ====================================================================
+%% API
+%% ====================================================================
+
+start_link() ->
+  lager:info("$1:start_link()~n",[]),
+  supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+
+start_child() ->
+  supervisor:start_child(?MODULE, []).
+
+terminate_child(Pid) ->
+  supervisor:terminate_child(?MODULE, Pid).
+
+which_children() ->
+  supervisor:which_children(?MODULE).
+
+%% ====================================================================
+%% supervisor
+%% ====================================================================
+
+init([]) ->
+  lager:info("$1:init(), PID [~p]~n", [self()]),
+  ChildSpec =
+    #{id => $2_id
+    , start => {$2, start_link, []}
+    , restart => temporary
+    , type => worker
+    },
+  RestartStrategy = {simple_one_for_one, 0, 1},
+  {ok, {RestartStrategy, [ChildSpec]}}.
+
+]]>
+</content>
+    <tabTrigger>gen_supervisor</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>dynamic</description>
+</snippet>
