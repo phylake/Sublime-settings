@@ -20,28 +20,26 @@
 %% ====================================================================
 
 start_link() ->
-  io:format("$1:start_link()~n", []),
+  lager:info("$1:start_link()", []),
   gen_fsm:start_link(?MODULE, [], []).
 
 %% ====================================================================
 %% States
 %% ====================================================================
 $0
-state_a(goto_state_b, StateData) ->
-  io:format("$1:state_a/2~n"),
-  {next_state, state_b, StateData}.
+state_a(goto_state_b, State) ->
+  lager:info("$1:state_a/2"),
+  {next_state, state_b, State}.
 
-state_a(goto_state_b, {_Pid, _Tag}, StateData) ->
-  io:format("$1:state_a/3~n"),
-  {reply, ok, state_b, StateData}.
+state_a('StateName/3 not implemented', {_Pid, _Tag}, State) ->
+  {stop, 'StateName/3 not implemented', State}.
 
-state_b(goto_state_a, StateData) ->
-  io:format("$1:state_b/2~n"),
-  {next_state, state_a, StateData}.
+state_b(goto_state_a, State) ->
+  lager:info("$1:state_b/2"),
+  {next_state, state_a, State}.
 
-state_b(goto_state_a, {_Pid, _Tag}, StateData) ->
-  io:format("$1:state_b/3~n"),
-  {reply, ok, state_a, StateData}.
+state_b('StateName/3 not implemented', {_Pid, _Tag}, State) ->
+  {stop, 'StateName/3 not implemented', State}.
 
 %% ====================================================================
 %% gen_fsm
@@ -52,48 +50,48 @@ state_b(goto_state_a, {_Pid, _Tag}, StateData) ->
 % -----------------
 
 init([]) ->
-  io:format("$1:init(), PID [~p]~n", [self()]),
+  lager:info("$1:init(), PID [~p]", [self()]),
   {ok, state_a, #state{}}.
 
 % -----------------
 % handle_event
 % -----------------
 
-handle_event(Event, StateName, StateData) ->
-  io:format("$1:handle_event(~p, ~p, ~p)~n",[Event, StateName, StateData]),
-  {next_state, StateName, StateData}.
+handle_event(Event, StateName, State) ->
+  lager:info("$1:handle_event(~p, ~p, ~p)",[Event, StateName, State]),
+  {next_state, StateName, State}.
 
 % -----------------
 % handle_sync_event
 % -----------------
 
-handle_sync_event(Event, From, StateName, StateData) ->
-  io:format("$1:handle_sync_event(~p, ~p, ~p, ~p)~n",[Event, From, StateName, StateData]),
-  {next_state, StateName, StateData}.
+handle_sync_event(Event, From, StateName, State) ->
+  lager:info("$1:handle_sync_event(~p, ~p, ~p, ~p)",[Event, From, StateName, State]),
+  {next_state, StateName, State}.
 
 % -----------------
 % handle_info
 % -----------------
 
-handle_info(Info, StateName, StateData) ->
-  io:format("$1:handle_info(~p, ~p, ~p)~n", [Info, StateName, StateData]),
-  {next_state, StateName, StateData}.
+handle_info(Info, StateName, State) ->
+  lager:info("$1:handle_info(~p, ~p, ~p)", [Info, StateName, State]),
+  {next_state, StateName, State}.
 
 % -----------------
 % terminate
 % -----------------
 
 terminate(_Reason, _StateName, _StateData) ->
-  io:format("$1:terminate()~n"),
+  lager:info("$1:terminate()"),
   ok.
 
 % -----------------
 % code_change
 % -----------------
 
-code_change(OldVsn, StateName, StateData, Extra) ->
-  io:format("$1:code_change(~p, ~p, ~p, ~p)~n", [OldVsn, StateName, StateData, Extra]),
-  {ok, StateName, StateData}.
+code_change(OldVsn, StateName, State, Extra) ->
+  lager:info("$1:code_change(~p, ~p, ~p, ~p)", [OldVsn, StateName, State, Extra]),
+  {ok, StateName, State}.
 
 ]]>
 </content>
