@@ -15,7 +15,7 @@
 %% ====================================================================
 
 start_link() ->
-  lager:info("$1:start_link()~n",[]),
+  lager:info("$1:start_link()",[]),
   supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ====================================================================
@@ -23,7 +23,7 @@ start_link() ->
 %% ====================================================================
 
 init([]) ->
-  lager:info("$1:init(), PID [~p]~n", [self()]),
+  lager:info("$1:init(), PID [~w]", [self()]),
   ChildSpecs = [
     #{id => $2_id
     , start => {$2, start_link, []}

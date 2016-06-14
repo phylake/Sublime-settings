@@ -50,7 +50,7 @@ state_b('StateName/3 not implemented', {_Pid, _Tag}, State) ->
 % -----------------
 
 init([]) ->
-  lager:info("$1:init(), PID [~p]", [self()]),
+  lager:info("$1:init(), PID [~w]", [self()]),
   {ok, state_a, #state{}}.
 
 % -----------------
@@ -58,7 +58,7 @@ init([]) ->
 % -----------------
 
 handle_event(Event, StateName, State) ->
-  lager:info("$1:handle_event(~p, ~p, ~p)",[Event, StateName, State]),
+  lager:info("$1:handle_event(~w, ~w, ~w)",[Event, StateName, State]),
   {next_state, StateName, State}.
 
 % -----------------
@@ -66,7 +66,7 @@ handle_event(Event, StateName, State) ->
 % -----------------
 
 handle_sync_event(Event, From, StateName, State) ->
-  lager:info("$1:handle_sync_event(~p, ~p, ~p, ~p)",[Event, From, StateName, State]),
+  lager:info("$1:handle_sync_event(~w, ~w, ~w, ~w)",[Event, From, StateName, State]),
   {next_state, StateName, State}.
 
 % -----------------
@@ -74,7 +74,7 @@ handle_sync_event(Event, From, StateName, State) ->
 % -----------------
 
 handle_info(Info, StateName, State) ->
-  lager:info("$1:handle_info(~p, ~p, ~p)", [Info, StateName, State]),
+  lager:info("$1:handle_info(~w, ~w, ~w)", [Info, StateName, State]),
   {next_state, StateName, State}.
 
 % -----------------
@@ -90,7 +90,7 @@ terminate(_Reason, _StateName, _StateData) ->
 % -----------------
 
 code_change(OldVsn, StateName, State, Extra) ->
-  lager:info("$1:code_change(~p, ~p, ~p, ~p)", [OldVsn, StateName, State, Extra]),
+  lager:info("$1:code_change(~w, ~w, ~w, ~w)", [OldVsn, StateName, State, Extra]),
   {ok, StateName, State}.
 
 ]]>
