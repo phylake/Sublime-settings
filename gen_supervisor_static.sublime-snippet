@@ -23,7 +23,7 @@ start_link() ->
 %% ====================================================================
 
 init([]) ->
-  lager:info("$1:init(), PID [~w]", [self()]),
+  lager:info("$1:init(), PID [~p]", [self()]),
   ChildSpecs = [
     #{id => $2_id
     , start => {$2, start_link, []}
