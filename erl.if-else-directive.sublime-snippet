@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+-ifdef (${1:macro}).
+
+-else. % $1
+
+-endif. % $1
+]]></content>
+    <tabTrigger>ifelif</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>If else directive</description>
+</snippet>
