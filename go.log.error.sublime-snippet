@@ -1,0 +1,8 @@
+<snippet>
+	<description>log.Error</description>
+	<content><![CDATA[
+log.Error("$0", "Error", err)
+]]></content>
+	<tabTrigger>log</tabTrigger>
+	<scope>source.go</scope>
+</snippet>
