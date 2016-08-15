@@ -89,7 +89,6 @@ terminate(_Reason, _StateName, _StateData) ->
 % -----------------
 
 code_change(OldVsn, StateName, State, Extra) ->
-  lager:info("$1:code_change(~p, ~p, ~p, ~p)", [OldVsn, StateName, State, Extra]),
   {ok, StateName, State}.
 
 ]]>

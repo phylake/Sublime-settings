@@ -15,7 +15,6 @@
 %% ====================================================================
 
 start_link() ->
-  lager:info("$1:start_link()",[]),
   supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ====================================================================
@@ -23,20 +22,19 @@ start_link() ->
 %% ====================================================================
 
 init([]) ->
-  lager:info("$1:init(), PID [~p]", [self()]),
   ChildSpecs = [
-    #{id => $2_id
-    , start => {$2, start_link, []}
+    #{id => $1_id
+    , start => {$1, start_link, []}
     , restart => permanent
     , type => worker
-    }
+    }$0
   ],
   RestartStrategy = {one_for_one, 10, 1},
   {ok, {RestartStrategy, ChildSpecs}}.
 
 ]]>
 </content>
-    <tabTrigger>gen_supervisor</tabTrigger>
+    <tabTrigger>supervisor</tabTrigger>
     <scope>source.erlang</scope>
     <description>static</description>
 </snippet>

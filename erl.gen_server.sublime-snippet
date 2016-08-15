@@ -6,18 +6,18 @@
          terminate/2, code_change/3]).
 
 -export([
-  start_link/${4:0}
+  start_link/0
 ]).
 
--record(state, {$2}).
-$0
+-record(state, {}).
+
 %% ====================================================================
 %% API
 %% ====================================================================
 
-start_link($3) ->
-  lager:info("$1:start_link()", []),
-  gen_server:start_link(?MODULE, [$3], []).
+start_link() ->
+  $0% gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+  gen_server:start_link(?MODULE, [], []).
 
 %% ====================================================================
 %% gen_server
@@ -27,9 +27,9 @@ start_link($3) ->
 % init
 % -----------
 
-init([$3]) ->
-  lager:info("$1:init(), PID [~p]", [self()]),
-  {ok, #state{${5: $2 = $3 }}}.
+init([]) ->
+  lager:info("PID [~p]", [self()]),
+  {ok, #state{}}.
 
 % -----------
 % handle_call
@@ -50,7 +50,7 @@ handle_cast(not_implemented, State) ->
 % -----------
 
 handle_info(Info, State) ->
-  lager:warning("$1:handle_info(~p, ~p)", [Info, State]),
+  lager:warning("Info [~p] State [~p]", [Info, State]),
   {noreply, State}.
 
 % -----------
@@ -58,15 +58,13 @@ handle_info(Info, State) ->
 % -----------
 
 terminate(_Reason, _State) ->
-  lager:info("$1:terminate()"),
   ok.
 
 % -----------
 % code_change
 % -----------
 
-code_change(OldVsn, State, Extra) ->
-  lager:info("$1:code_change(~p, ~p, ~p)", [OldVsn, State, Extra]),
+code_change(_OldVsn, State, _Extra) ->
   {ok, State}.
 
 ]]>

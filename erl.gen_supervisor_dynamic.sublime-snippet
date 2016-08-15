@@ -18,7 +18,6 @@
 %% ====================================================================
 
 start_link() ->
-  lager:info("$1:start_link()",[]),
   supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 start_child() ->
@@ -35,19 +34,18 @@ which_children() ->
 %% ====================================================================
 
 init([]) ->
-  lager:info("$1:init(), PID [~p]", [self()]),
   ChildSpec =
-    #{id => $2_id
-    , start => {$2, start_link, []}
-    , restart => temporary
+    #{id => $1_id
+    , start => {$1, start_link, []}
+    , restart => transient
     , type => worker
-    },
+    }$0
   RestartStrategy = {simple_one_for_one, 0, 1},
   {ok, {RestartStrategy, [ChildSpec]}}.
 
 ]]>
 </content>
-    <tabTrigger>gen_supervisor</tabTrigger>
+    <tabTrigger>supervisor</tabTrigger>
     <scope>source.erlang</scope>
     <description>dynamic</description>
 </snippet>
