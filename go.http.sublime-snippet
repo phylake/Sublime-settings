@@ -21,8 +21,8 @@ func main() {
 		port = "3000"
 	}
 
-	fmt.Printf("listing on %s\n", port)
-	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
+	fmt.Println("listing on " + port)
+	http.ListenAndServe(":"+port, nil)
 }
 ]]></content>
 	<tabTrigger>http</tabTrigger>
