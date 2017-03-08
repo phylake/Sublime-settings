@@ -7,7 +7,7 @@ ${2/(\w)(.*)/\L\1\E\2/g}Input := &$3.$2Input{
 var ${2/(\w)(.*)/\L\1\E\2/g}Output *$3.$2Output
 
 retryMsg := func(i int) { log.Warn("$3:$2 retrying", "Count", i) }
-if !util.SuccessRetryer(7, retryMsg, func() bool {
+if !util.SuccessRetryer(3, retryMsg, func() bool {
 
 	log.Info("$3:$2")
 	${2/(\w)(.*)/\L\1\E\2/g}Output, err = $1.$2(${2/(\w)(.*)/\L\1\E\2/g}Input)
@@ -18,7 +18,7 @@ if !util.SuccessRetryer(7, retryMsg, func() bool {
 
 	return true
 }) {
-	log.Crit("Failed to $3:$2")
+	log.Error("Failed to $3:$2")
 	return
 }
 ]]></content>
