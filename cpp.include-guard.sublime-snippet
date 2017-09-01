@@ -1,5 +1,5 @@
 <snippet>
-	<description>include guard</description>
+    <description>include guard</description>
     <content><![CDATA[
 #ifndef $1_HPP_
 #define $1_HPP_

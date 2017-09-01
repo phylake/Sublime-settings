@@ -1,0 +1,10 @@
+<snippet>
+    <description>namespace</description>
+    <content><![CDATA[
+namespace $1 {
+$0
+}  // namespace $1
+]]></content>
+    <tabTrigger>namespace</tabTrigger>
+    <scope>source.c, source.c++, source.objc, source.objc++</scope>
+</snippet>
