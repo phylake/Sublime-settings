@@ -1,0 +1,12 @@
+<snippet>
+	<description>include guard</description>
+    <content><![CDATA[
+#ifndef $1_HPP_
+#define $1_HPP_
+
+$0
+
+#endif  // $1_HPP_]]></content>
+    <tabTrigger>include</tabTrigger>
+    <scope>source.c, source.c++, source.objc, source.objc++</scope>
+</snippet>
