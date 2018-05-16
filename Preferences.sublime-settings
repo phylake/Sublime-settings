@@ -1,33 +1,36 @@
 {
-  "default_line_ending": "unix",
-  "ensure_newline_at_eof_on_save": true,
-  "trim_trailing_white_space_on_save": true,
-  "font_size": 14.0,
-  "scroll_speed": 1.3,
-  "word_wrap": "false",
-  "binary_file_patterns": [
-    "*.jpg",
-    "*.jpeg",
-    "*.png",
-    "*.gif",
-    "*.ttf",
-    "*.tga",
-    "*.dds",
-    "*.ico",
-    "*.eot",
-    "*.pdf",
-    "*.swf",
-    "*.jar",
-    "*.zip",
-    "node_modules/**",
-    "bower_components/**"
-  ],
-  "ignored_packages": [
-    "Vintage"
-  ],
-  "rulers": [
-    80,
-    120
-  ],
-  "theme": "Brogrammer.sublime-theme"
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"node_modules/**",
+		"bower_components/**"
+	],
+	"default_line_ending": "unix",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 14.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80,
+		120
+	],
+	"scroll_speed": 1.3,
+	"theme": "Brogrammer.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": "false"
 }
